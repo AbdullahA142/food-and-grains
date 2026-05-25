@@ -1,0 +1,39 @@
+﻿@model Food_and_Grains.Models.FoodItem
+
+<div class="container mt-4">
+    <div class="row">
+
+        <div class="col-md-6">
+            <form method="post">
+
+                <div class="mb-3">
+                    <label>Name:</label>
+                    <input type="text" name="Name" class="form-control" />
+                </div>
+
+                <div class="mb-3">
+                    <label>Category:</label>
+                    <input type="text" name="Category" class="form-control" />
+                </div>
+
+                <div class="mb-3">
+                    <label>Quantity:</label>
+                    <input type="number" name="Quantity" class="form-control" />
+                </div>
+
+                <div class="mb-3">
+                    <label>Description:</label>
+                    <textarea name="Description" class="form-control"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-custom">Save</button>
+            </form>
+        </div>
+
+        <div class="col-md-6">
+            <img src="~/images/food.jpg"
+                 style="width:100%;border-radius:10px;" />
+        </div>
+
+    </div>
+</div>

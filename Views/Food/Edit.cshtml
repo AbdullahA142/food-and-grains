@@ -1,0 +1,19 @@
+﻿@model Food_and_Grains.Models.FoodItem
+
+<h2>Edit Food</h2>
+
+<form method="post">
+
+    <input type="hidden" name="Id" value="@Model.Id" />
+
+    <label>Name:</label>
+    <input type="text" name="Name" value="@Model.Name" class="form-control" /><br />
+
+    <label>Category:</label>
+    <input type="text" name="Category" value="@Model.Category" class="form-control" /><br />
+
+    <label>Quantity:</label>
+    <input type="number" name="Quantity" value="@Model.Quantity" class="form-control" /><br />
+
+    <button type="submit" class="btn btn-success">Update</button>
+</form>

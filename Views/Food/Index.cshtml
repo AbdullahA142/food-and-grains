@@ -1,0 +1,60 @@
+﻿@model List<Food_and_Grains.Models.FoodItem>
+
+<div class="container mt-4">
+
+    <h2 class="text-success mb-4">🌾 Food & Grains Management</h2>
+
+    <a href="/Food/Create" class="btn btn-success mb-2">+ Add Food</a>
+
+    <tr style="background-color:#2e7d32;color:white;">
+
+    <input type="text" id="searchBox" class="form-control mb-3" placeholder="Search food..." />
+
+    <table class="table table-hover table-bordered shadow-lg">
+        <tr class="table-success">
+        <th>Id</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Quantity</th>
+        <th>Date</th>
+        <th>Image</th>
+        <th>Action</th>
+     </tr>
+
+            <script>
+                            document.getElementById("searchBox").addEventListener("keyup", function () {
+                                let value = this.value.toLowerCase();
+                                let rows = document.querySelectorAll("table tbody tr");
+
+                                rows.forEach(row => {
+                                    row.style.display = row.innerText.toLowerCase().includes(value) ? "" : "none";
+                                });
+                            });
+            </script>
+
+            <p><b>Total Items:</b> @Model.Count</p>
+
+        @foreach (var item in Model)
+        {
+         <tr>
+            <td>@item.Id</td>
+                <td>
+                    <a href="/Food/Details/@item.Id">@item.Name</a>
+                </td>
+            <td>@item.Category</td>
+                    <td>@item.Quantity Kg</td>
+            <td>@item.AddedDate.ToShortDateString()</td>
+
+                    <td class="text-center">
+                        <img src="@item.ImagePath"
+                             style="width:70px;height:70px;object-fit:cover;border-radius:12px;" />
+                    </td>
+
+                    <td class="text-center">
+                        <a href="/Food/Edit/@item.Id" class="btn btn-warning btn-sm me-1">Edit</a>
+                        <a href="/Food/Delete/@item.Id" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+         </tr>
+    }
+    </table>
+</div>

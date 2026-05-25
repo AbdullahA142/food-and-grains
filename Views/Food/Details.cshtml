@@ -1,0 +1,44 @@
+﻿@model Food_and_Grains.Models.FoodItem
+
+<div class="container mt-4">
+    <div class="card p-4 shadow">
+
+        <h2 class="text-success">@Model.Name</h2>
+
+        <img src="@Model.ImagePath" style="width:200px;border-radius:10px;" />
+
+        <p><b>Category:</b> @Model.Category</p>
+        <p><b>Quantity:</b> @Model.Quantity</p>
+
+        <hr />
+
+        <h4>Description</h4>
+        <p>@Model.Description</p>
+
+        @if (Model.Name == "Wheat")
+        {
+            <p>Wheat ek grain hai jo roti aur bread banane me use hota hai.</p>
+        }
+        else if (Model.Name == "Rice")
+        {
+            <p>Rice India ka main food hai, chawal banane me use hota hai.</p>
+        }
+        else if (Model.Name == "Dal")
+        {
+            <p>Dal protein ka main source hai aur daily khane me use hoti hai.</p>
+        }
+        else if (Model.Name == "Sugar")
+        {
+            <p>Sugar meetha banane ke liye use hota hai jaise chai, sweets.</p>
+        }
+        else if (Model.Name == "Oil")
+        {
+            <p>Oil cooking ke liye use hota hai jaise frying aur tadka.</p>
+        }
+
+        <br />
+
+        <a href="/Food" class="btn btn-secondary">Back</a>
+
+    </div>
+</div>
